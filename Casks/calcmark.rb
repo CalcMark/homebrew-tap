@@ -3,7 +3,7 @@ cask "calcmark" do
   name "calcmark"
   desc "CalcMark - calculations embedded in markdown"
   homepage "https://calcmark.org"
-  version "1.4.4"
+  version "1.5.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,23 +13,33 @@ cask "calcmark" do
 
   on_macos do
     on_intel do
-      url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_darwin_amd64.tar.gz"
-      sha256 "5cd1391d5d9961cf85b30390cee5450fa92f6bb10454aa461e394dbe939d2b27"
+      url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_darwin_amd64.tar.gz",
+        verified: "github.com/CalcMark/go-calcmark"
+      sha256 "7fd161d7b22e8115840e0195f56029a3f96777a9e72189090f3b37a37d72320b"
     end
     on_arm do
-      url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_darwin_arm64.tar.gz"
-      sha256 "ac136e95f00b128e6428e675655e0ed8f3a6892588b545a4ef4446eaca4ee042"
+      url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_darwin_arm64.tar.gz",
+        verified: "github.com/CalcMark/go-calcmark"
+      sha256 "cd207273b383402cfa74b40f358d2336c791acb11b80d230d6f84601720e3793"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_linux_amd64.tar.gz"
-      sha256 "84e224ec0cbaac2f244384fbb43c152b979b5fe4e6d65f76f5cabdc1078197f1"
+      url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_linux_amd64.tar.gz",
+        verified: "github.com/CalcMark/go-calcmark"
+      sha256 "822601d2dad5fde0eb11a6c70bf659a97af02b17cc136229eb1478e4b60f290b"
     end
     on_arm do
-      url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_linux_arm64.tar.gz"
-      sha256 "b6aaeb2a02042649204553eadc3d4bddf9740255691e803b971185053965f8bf"
+      url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_linux_arm64.tar.gz",
+        verified: "github.com/CalcMark/go-calcmark"
+      sha256 "7f506b87e941c18ab701fc771609236f2b12bfef2e87b1b8eaa450a621b371d4"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/cm"]
     end
   end
 
