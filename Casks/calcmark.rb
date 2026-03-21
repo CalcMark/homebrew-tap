@@ -3,7 +3,7 @@ cask "calcmark" do
   name "calcmark"
   desc "CalcMark - calculations embedded in markdown"
   homepage "https://calcmark.org"
-  version "1.9.3"
+  version "1.9.4"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "calcmark" do
     on_intel do
       url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/CalcMark/go-calcmark"
-      sha256 "e6d1249ca31700db4f47555f1bd4b6dba5921686d1bc0588e5e0c31620703827"
+      sha256 "743191206a4d42f395a9fc0480b2a3926a3c32d571dbcdcc61850641eb7916c3"
     end
     on_arm do
       url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_darwin_arm64.tar.gz",
         verified: "github.com/CalcMark/go-calcmark"
-      sha256 "ae0ebc42339e7a9e13aecd6c9733261c07e9ed3a9eaaa21b00c842b2da210fef"
+      sha256 "9261fe70f306d22ac45d4dd14e56c036afd3b0619df0d18ebd97ac1073c5a4bd"
     end
   end
 
@@ -28,12 +28,12 @@ cask "calcmark" do
     on_intel do
       url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_linux_amd64.tar.gz",
         verified: "github.com/CalcMark/go-calcmark"
-      sha256 "62ab704f624771264f63a2e89f1ffc38074a56851b64f1020b03e804fb75f2ff"
+      sha256 "c73ca74c79c2b018d10a5867708ec09edb85bbb495f8900167d7ec516066729e"
     end
     on_arm do
       url "https://github.com/CalcMark/go-calcmark/releases/download/v#{version}/calcmark_#{version}_linux_arm64.tar.gz",
         verified: "github.com/CalcMark/go-calcmark"
-      sha256 "da064d85f09131951acfd822fca1996ceec3da4df63d72d749bee0542d4ebc9e"
+      sha256 "ed7c44e355af6499d07b2af695ae4cd2739435519686a25dd374c7aa33ca9824"
     end
   end
 
